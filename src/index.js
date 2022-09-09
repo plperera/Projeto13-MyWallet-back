@@ -17,4 +17,28 @@ mongoClient.connect().then(() => {
     db = mongoClient.db("mywallet")
 })
 
+
+let arr = []
+
+server.get('/historico/:user', function (req, res) {
+
+    const {user} = req.params
+    console.log(user)
+    res.send(arr.filter((e)=>e.user === user))
+})
+server.post('/historico', function (req, res) {
+
+    const {valor, descricao} = req.body
+    const {user} = req.headers
+
+    arr.push({
+        valor,
+        descricao,
+        user
+    })
+
+    res.sendStatus(201)
+
+})
+
 server.listen(5000, () => console.log("salve console"))
