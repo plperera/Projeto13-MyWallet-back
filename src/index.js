@@ -3,11 +3,11 @@ import cors from 'cors';
 import {} from 'mongodb'
 
 import dayjs from 'dayjs';
-import db from '../db.js'
+import db from './database/db.js'
 
-import { BuscarMovimentacao, NovaMovimentacao } from './movimentacao.js';
-import { NovoCadastro } from './cadastro.js';
-import { NovoLogin } from './login.js';
+import { BuscarMovimentacao, NovaMovimentacao } from './controllers/movimentacao.js';
+import { NovoCadastro } from './controllers/cadastro.js';
+import { NovoLogin } from './controllers/login.js';
 const server = express()
 
 server.use(cors())
