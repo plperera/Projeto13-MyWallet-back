@@ -31,7 +31,7 @@ async function NovoCadastro(req, res){
 }
 
 async function GetCadastros (req, res){
-    const arr = await db.collection('sessions').find().toArray()
+    const arr = await db.collection('movimentacoes').find().toArray()
     // arr.map((a) => {
     //     db.collection('users').deleteOne({ _id: a._id})
     // })
