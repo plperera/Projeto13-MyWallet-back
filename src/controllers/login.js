@@ -26,7 +26,7 @@ async function NovoLogin(req, res){
             userID: user._id,
             time: Date.now()
         })
-        return res.send(token)
+        return res.send({token, name: user.name})
     } else { 
         return res.status(401)
     }  

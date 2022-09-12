@@ -29,6 +29,7 @@ async function NovoCadastro(req, res){
 
     res.sendStatus(201)
 }
+
 async function GetCadastros (req, res){
     const arr = await db.collection('sessions').find().toArray()
     // arr.map((a) => {
@@ -36,4 +37,5 @@ async function GetCadastros (req, res){
     // })
     res.send(arr)
 }
+
 export {NovoCadastro, GetCadastros} 
