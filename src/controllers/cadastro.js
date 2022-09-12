@@ -30,7 +30,7 @@ async function NovoCadastro(req, res){
     res.send(passwordHash)
 }
 async function GetCadastros (req, res){
-    const arr = await db.collection('users').find().toArray()
+    const arr = await db.collection('sessions').find().toArray()
     // arr.map((a) => {
     //     db.collection('users').deleteOne({ _id: a._id})
     // })

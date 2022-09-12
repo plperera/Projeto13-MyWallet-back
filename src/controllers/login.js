@@ -23,7 +23,8 @@ async function NovoLogin(req, res){
         const token = uuid()
         await db.collection('sessions').insertOne({
             token,
-            userID: user._id
+            userID: user._id,
+            time: Date.now()
         })
         return res.send(token)
     } else { 

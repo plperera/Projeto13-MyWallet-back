@@ -14,7 +14,7 @@ server.get('/cadastro', GetCadastros)
 
 server.post('/login', NovoLogin)
 
-server.get('/historico/:user', HistoricoMovimentacao)
+server.get('/historico', HistoricoMovimentacao)
 server.post('/historico', NovaMovimentacao)
 
 server.listen(5000, () => console.log("salve console"))
