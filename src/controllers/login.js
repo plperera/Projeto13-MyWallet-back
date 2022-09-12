@@ -16,6 +16,7 @@ async function NovoLogin(req, res){
         const erros = validation.error.details.map(e => e.message)
         return res.status(422).send(erros)
     }
+    
     const user = await db.collection('users').findOne({email})
 
     if( user && bcrypt.compareSync(password, user.passwordHash)){
@@ -28,8 +29,9 @@ async function NovoLogin(req, res){
         })
         return res.send({token, name: user.name})
     } else { 
-        return res.status(401)
+        return res.sendStatus(401)
     }  
+    
 }
 
 export {NovoLogin}
