@@ -27,7 +27,7 @@ async function NovoCadastro(req, res){
         passwordHash
     })
 
-    res.send(passwordHash)
+    res.sendStatus(201)
 }
 async function GetCadastros (req, res){
     const arr = await db.collection('sessions').find().toArray()
