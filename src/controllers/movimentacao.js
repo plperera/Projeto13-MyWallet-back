@@ -5,7 +5,7 @@ const movimentacaoSchema = joi.object({
     descricao:joi.string().min(4).max(25).required(),
 })
 
-function BuscarMovimentacao(req, res){
+function HistoricoMovimentacao(req, res){
 
     const {user} = req.params
     console.log(user)
@@ -33,4 +33,4 @@ function NovaMovimentacao(req, res) {
 
 }
 
-export {BuscarMovimentacao, NovaMovimentacao}
+export {HistoricoMovimentacao, NovaMovimentacao}
